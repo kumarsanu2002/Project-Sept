@@ -3,12 +3,13 @@ import { useSnapshot } from 'valtio';
 
 //default val from state secton
 import state from '../store';
-
+import CustomButton from '../components/CustomButton';
 import {headContainerAnimation ,
         headContentAnimation, 
         headTextAnimation ,
         slideAnimation
 } from '../config/motion'
+
 
 const Home = () => {
      const snap = useSnapshot(state); //defaul val
@@ -35,6 +36,13 @@ const Home = () => {
                 Create your unique and exclusive shirt with our brand
                 new 3-D customization tool. <strong>Beyound your imagination</strong>
                 </p>
+                
+                <CustomButton 
+                type="filled"
+                title="Customize It"
+                handleClick={() => state.intro = false}
+                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              />
                </motion.div>
             </motion.div>
         </motion.section>
